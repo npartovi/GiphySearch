@@ -23,7 +23,6 @@ class SearchBar extends Component {
 
 
     render(){
-        console.log(this.state)
         return(
             <div className="search-bar-container">
                 <form onSubmit={this.onSubmit}>
