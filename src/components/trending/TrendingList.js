@@ -6,9 +6,9 @@ import TrendingListItem from './TrendingListItem'
 
 class TrendingList extends Component {
 
-    constructor(props){
-        super(props)
-    }
+    // constructor(props){
+    //     super(props)
+    // }
 
     componentDidMount(){
         this.props.giphyTrending()
@@ -18,13 +18,16 @@ class TrendingList extends Component {
 
         const { trendingList } = this.props
         
-        const trendingGiphsList = trendingList.map(gif => (
-            <TrendingListItem gif={gif} />  
+        const trendingGiphsList = trendingList.map((gif,idx) => (
+            <TrendingListItem key={idx} gif={gif} />  
         ))
 
         return(
-            <div>
-                {trendingGiphsList}
+            <div className="trending-list-container">
+                <h1>Trending List</h1>
+                <div className="trending-list-wrapper">
+                    {trendingGiphsList}
+                </div>
             </div>
         )
     }

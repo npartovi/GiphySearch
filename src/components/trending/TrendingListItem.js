@@ -2,11 +2,12 @@ import React from 'react'
 
 const TrendingListItem = ({ gif }) => {
 
-    let originalImage = gif.images.fixed_width.url
-
+    let originalImage = gif.images.fixed_height.url
 
     return(
-        <img src={originalImage} />
+        <div className="trending-list-item">
+            <img alt="oops" src={originalImage} />
+        </div>
     )
 }
 
