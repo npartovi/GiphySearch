@@ -10,13 +10,13 @@ class GiphsList extends Component {
 
         this.state = {
             giphs: [],
-            offset: 0
         }
     }
 
     componentDidMount(){
+        this.props.giphyTrending()
         window.addEventListener('scroll', this.trackScrolling)
-        this.props.giphyTrending(this.state.offset)
+        
     }
 
     componentWillUnmount(){
@@ -24,8 +24,8 @@ class GiphsList extends Component {
     }
 
     componentWillReceiveProps(nextProps){
-        let newState = this.state.giphs.concat(nextProps.giphs)
-        this.setState({giphs: newState, offset: this.state.offset + 1})
+        
+        this.setState({giphs: nextProps.giphs})
     }
 
     trackScrolling = () => {
@@ -35,8 +35,8 @@ class GiphsList extends Component {
         const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
         const windowBottom = windowHeight + window.pageYOffset;
         
-        if (windowBottom >= docHeight - 1) {
-            this.props.giphyTrending(this.state.offset + 1)
+        if (windowBottom >= docHeight - (1/2)) {
+            
         }
     }
 

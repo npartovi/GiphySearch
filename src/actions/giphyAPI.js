@@ -2,11 +2,10 @@ import axios from 'axios'
 import keys from '../config'
 import { GET_ALL_TRENDING_GIPHS, SEARCH_RESULT_GIPHS } from './types'
 
-export const giphyTrending = (offset) => dispatch => {
+export const giphyTrending = () => dispatch => {
 
-    console.log(offset)
 
-    axios.get(`http://api.giphy.com/v1/gifs/trending?api_key=${keys.giphyAPIKey}&limit=25&offset=${offset}`)
+    axios.get(`http://api.giphy.com/v1/gifs/trending?api_key=${keys.giphyAPIKey}&limit=25`)
         .then(res => {
             dispatch({
                 type: GET_ALL_TRENDING_GIPHS,
@@ -18,10 +17,9 @@ export const giphyTrending = (offset) => dispatch => {
         })
 }
 
-export const giphySearch = (term,offset) => dispatch => {
-    console.log(offset)
+export const giphySearch = (term) => dispatch => {
 
-    axios.get(`http://api.giphy.com/v1/gifs/search?api_key=${keys.giphyAPIKey}&q=${term}&limit=25&offset=${offset}`)
+    axios.get(`http://api.giphy.com/v1/gifs/search?api_key=${keys.giphyAPIKey}&q=${term}&limit=25`)
         .then(res => {
             dispatch({
                 type: GET_ALL_TRENDING_GIPHS,
