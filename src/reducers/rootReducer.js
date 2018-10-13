@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux'
-import trendingReducer from './trendingReducer'
-import searchReducer from './searchReducer'
+import giphsReducer from './giphsReducer'
 
 
 export default combineReducers({
-    trending: trendingReducer,
-    search: searchReducer
+    giphs: giphsReducer,
 })

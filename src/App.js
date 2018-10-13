@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import TrendingList from './components/trending/TrendingList'
-import SearchBar from './components/search/SearchBar'
-import SearchList from './components/search/SearchList'
+import GiphsList from './components/giphs/GiphsList'
+import Navbar from './components/layout/NavBar'
 import './App.css';
 import store from './store';
 import { Provider } from 'react-redux';
@@ -12,9 +11,10 @@ class App extends Component {
     return (
       <Provider store={store} >
         <div className="App">
-          <TrendingList />
-          <SearchBar />
-          <SearchList />
+          <div className="layout-container">
+            <Navbar />
+            <GiphsList />
+          </div>
         </div>
       </Provider>
     );

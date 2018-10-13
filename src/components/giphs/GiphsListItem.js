@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TrendingListItem = ({ gif }) => {
+const GiphsListItem = ({ gif }) => {
 
     let originalImage = gif.images.fixed_height.url
 
@@ -11,4 +11,4 @@ const TrendingListItem = ({ gif }) => {
     )
 }
 
-export default TrendingListItem
+export default GiphsListItem

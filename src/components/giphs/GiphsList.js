@@ -2,13 +2,9 @@ import React, {Component} from 'react'
 import { giphyTrending } from '../../actions/giphyAPI'
 import {connect} from 'react-redux'
 
-import TrendingListItem from './TrendingListItem'
+import GiphsListItem from './GiphsListItem'
 
-class TrendingList extends Component {
-
-    // constructor(props){
-    //     super(props)
-    // }
+class GiphsList extends Component {
 
     componentDidMount(){
         this.props.giphyTrending()
@@ -16,17 +12,17 @@ class TrendingList extends Component {
 
     render(){
 
-        const { trendingList } = this.props
+        const { giphs } = this.props
         
-        const trendingGiphsList = trendingList.map((gif,idx) => (
-            <TrendingListItem key={idx} gif={gif} />  
+        const GiphsList = giphs.map((gif,idx) => (
+            <GiphsListItem key={idx} gif={gif} />  
         ))
 
         return(
             <div className="trending-list-container">
                 <h1>Trending List</h1>
                 <div className="trending-list-wrapper">
-                    {trendingGiphsList}
+                    {GiphsList}
                 </div>
             </div>
         )
@@ -34,7 +30,7 @@ class TrendingList extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    trendingList: state.trending
+    giphs: state.giphs
 })
 
-export default connect(mapStateToProps, {giphyTrending})(TrendingList)
+export default connect(mapStateToProps, {giphyTrending})(GiphsList)

@@ -2,7 +2,7 @@ import {GET_ALL_TRENDING_GIPHS} from '../actions/types'
 
 const intialState = []
 
-const trendingReducer = (state = intialState, action) => {
+const giphsReducer = (state = intialState, action) => {
     Object.freeze(state)
     let newState
     switch(action.type){
@@ -14,4 +14,4 @@ const trendingReducer = (state = intialState, action) => {
     }
 }
 
-export default trendingReducer
+export default giphsReducer

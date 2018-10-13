@@ -1,4 +1,13 @@
-.trending-list-wrapper {
-  display: flex;
+body{
+  margin: 0px;
 }
 
+.navbar-container {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+}
+
+.trending-list-container {
+  margin-left: 200px;
+}
