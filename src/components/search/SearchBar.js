@@ -17,7 +17,7 @@ class SearchBar extends Component {
 
     onSubmit = (e) => {
         e.preventDefault()
-        this.props.giphySearch(this.state.term)
+        this.props.giphySearch(this.state.term,0)
     }
 
 

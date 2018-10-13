@@ -43,6 +43,7 @@ class GiphsList extends Component {
     render(){
 
         const { giphs } = this.state
+        console.log(giphs)
         
         const GiphsList = giphs.map((gif,idx) => (
             <GiphsListItem key={idx} gif={gif} />  
