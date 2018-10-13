@@ -20,7 +20,6 @@ class SearchBar extends Component {
         this.props.updateSearchTerm(this.state.term)
     }
 
-
     render(){
         return(
             <div className="search-bar-container">

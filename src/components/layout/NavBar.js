@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { giphyTrending, giphyRandom } from '../../actions/giphyAPI'
 
 class NavBar extends Component {
+
+    
    
     render(){
         return(

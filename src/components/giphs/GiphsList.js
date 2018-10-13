@@ -14,6 +14,7 @@ class GiphsList extends Component {
             giphs: this.props.giphs,
             searchTerm: "",
             offset: 0,
+            trending: true
         }
     }
 
@@ -29,7 +30,7 @@ class GiphsList extends Component {
         console.log("nextProps", nextProps)
         console.log("nextState", nextState)
         if(nextProps.searchTerm !== this.state.searchTerm){
-            this.setState({searchTerm: nextProps.searchTerm, offset: 0, giphs: []}, () => {
+            this.setState({searchTerm: nextProps.searchTerm, offset: 0, giphs: [], trending: false}, () => {
                 this.renderGiphs()
             })
         }
@@ -69,8 +70,6 @@ class GiphsList extends Component {
         })
     }
 
-
-
     trackScrolling = () => {
         const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
         const body = document.body;
@@ -85,7 +84,6 @@ class GiphsList extends Component {
 
     render(){
 
-        console.log(this.state.offset)
         const { giphs } = this.state
 
         const GiphsList = giphs.map((gif,idx) => (
