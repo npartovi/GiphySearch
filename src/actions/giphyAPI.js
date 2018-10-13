@@ -4,6 +4,8 @@ import { GET_ALL_TRENDING_GIPHS, SEARCH_RESULT_GIPHS } from './types'
 
 export const giphyTrending = (offset) => dispatch => {
 
+    console.log("offset",offset)
+
     axios.get(`http://api.giphy.com/v1/gifs/trending?limit=25&api_key=${keys.giphyAPIKey}&offset=${offset}`)
         .then(res => {
             dispatch({

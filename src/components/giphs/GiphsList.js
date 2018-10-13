@@ -15,17 +15,34 @@ class GiphsList extends Component {
     }
 
     componentDidMount(){
+        window.addEventListener('scroll', this.trackScrolling)
         this.props.giphyTrending(this.state.offset)
     }
 
+    componentWillUnmount(){
+        window.removeEventListener('scroll', this.trackScrolling)
+    }
+
     componentWillReceiveProps(nextProps){
-        this.setState({giphs: nextProps.giphs})
+        let newState = this.state.giphs.concat(nextProps.giphs)
+        this.setState({giphs: newState, offset: this.state.offset + 1})
+    }
+
+    trackScrolling = () => {
+        const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+        const body = document.body;
+        const html = document.documentElement;
+        const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
+        const windowBottom = windowHeight + window.pageYOffset;
+        
+        if (windowBottom >= docHeight - 1) {
+            this.props.giphyTrending(this.state.offset + 1)
+        }
     }
 
     render(){
 
         const { giphs } = this.state
-        console.log(giphs)
         
         const GiphsList = giphs.map((gif,idx) => (
             <GiphsListItem key={idx} gif={gif} />  
