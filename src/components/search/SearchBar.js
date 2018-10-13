@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { giphySearch } from '../../actions/giphyAPI'
+import {updateSearchTerm } from '../../actions/giphyAPI'
 import {connect} from 'react-redux'
 
 class SearchBar extends Component {
@@ -17,9 +17,8 @@ class SearchBar extends Component {
 
     onSubmit = (e) => {
         e.preventDefault()
-        this.props.giphySearch(this.state.term,0)
+        this.props.updateSearchTerm(this.state.term)
     }
-
 
 
     render(){
@@ -37,4 +36,4 @@ class SearchBar extends Component {
     }
 }
 
-export default connect(null, {giphySearch})(SearchBar)
+export default connect(null, {updateSearchTerm})(SearchBar)
