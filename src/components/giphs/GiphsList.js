@@ -26,6 +26,14 @@ class GiphsList extends Component {
         localStorage.setItem("favorites", JSON.stringify(newState))
     }
 
+    removeFavoritesList = (gif) => {
+        let newState = [...this.state.favorites]
+        newState = newState.filter(favorite => favorite !== gif )
+        this.setState({favorites: newState})
+        console.log(this.state.favorites)
+        localStorage.setItem("favorites", JSON.stringify(newState))
+    }
+
     componentWillUnmount(){
         window.removeEventListener('scroll', this.trackScrolling)
     }
@@ -104,7 +112,7 @@ class GiphsList extends Component {
 
         if(renderFavorites){
             GiphsList = favorites.map((gif,idx) => (
-                <GiphsListItem updateFavorites={this.updateFavoritesList} key={idx} gif={gif} />  
+                <GiphsListItem updateFavorites={this.removeFavoritesList} key={idx} gif={gif} />  
             ))
         }else{
             GiphsList = giphs.map((gif,idx) => (
