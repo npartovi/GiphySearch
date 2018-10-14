@@ -14,11 +14,23 @@ class GiphsList extends Component {
             giphs: this.props.giphs,
             searchTerm: "",
             offset: 0,
+            favorites: []
         }
     }
 
+
+    updateFavoritesList = (gif) => {
+        let newState = [...this.state.favorites]
+        newState.push(gif)
+        this.setState({favorites: newState}, () => {
+            console.log(this.state.favorites)
+        })
+        // this.setState({favorites: newState})
+        // localStorage.setItem("favorites", JSON.stringify(this.state.favorites))
+    }
+
     componentDidMount(){
-        window.addEventListener('scroll', this.trackScrolling)   
+      
     }
 
     componentWillUnmount(){
@@ -84,7 +96,7 @@ class GiphsList extends Component {
         const { giphs } = this.state
 
         const GiphsList = giphs.map((gif,idx) => (
-            <GiphsListItem key={idx} gif={gif} />  
+            <GiphsListItem updateFavorites={this.updateFavoritesList} key={idx} gif={gif} />  
         ))
 
         return(

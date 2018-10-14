@@ -177,6 +177,11 @@ button.close-modal-button {
   border: none;
 }
 
+button.favorite-button {
+  position: absolute;
+  right: 146px;
+}
+
 .list{
   text-align: left;
 }

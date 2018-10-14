@@ -14,12 +14,16 @@ class GiphsListItem extends Component {
 
     closeModal = () => this.setState({modal: false})
 
+    favoriteAdded = (gif) => {
+        this.props.updateFavorites(gif)
+        this.closeModal()
+    }
+
     
     render(){
 
         
         const {gif} = this.props
-        console.log(gif)
         const { modal } = this.state
         const source = gif.source || "no source available"
         const title = gif.title || "no title available"
@@ -49,6 +53,7 @@ class GiphsListItem extends Component {
                                 </ul>
                             </div>
                             <button className="close-modal-button" onClick={this.closeModal}>Close Modal</button>
+                            <button className="favorite-button" onClick={() => this.favoriteAdded(gif)}>Favorite</button>
                         </div>
                     </div>
                 </div>
