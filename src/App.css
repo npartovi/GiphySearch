@@ -1,11 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+
 body{
   margin: 0px;
+  background:black;
 }
 
 .navbar-container {
   height: 100%;
-  width: 200px;
+  width: 300px;
   position: fixed;
+  background: rgb(0, 170, 231);
 }
 
 .layout-container {
@@ -17,7 +30,7 @@ body{
 
 
 .giphs-list-container {
-  margin-left: 200px;
+  margin-left: 300px;
 }
 
 .giphs-list-wrapper {
