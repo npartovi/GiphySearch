@@ -15,15 +15,18 @@ class SearchBar extends Component {
         this.setState({term: e.target.value})
     }
 
-    onSubmit = () => {
+    onSubmit = (e) => {
+        e.preventDefault()
         this.props.updateSearchTerm(this.state.term)
     }
 
     render(){
         return(
             <div className="search-bar-wrapper">
+                <form onSubmit={this.onSubmit}>
                     <input id="searchText" onChange={this.onChange} type="search" placeholder="Search for a Giphy..." />
-                    <button onClick={this.onSubmit}>Submit</button>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
             
         )

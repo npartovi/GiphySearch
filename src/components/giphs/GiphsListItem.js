@@ -37,17 +37,16 @@ class GiphsListItem extends Component {
                             <img src={originalImage} />
                         </div>
                         <div className="right-modal-container">
-                            <div className="right-modal-content">
-                                <h3>{title}</h3>
-                                <h3>{username}</h3>
-                                <h3>{rating}</h3>
-                                <h3>{url}</h3>
-                                <h3>{trending_datetime}</h3>
-                                <h3>{source}</h3>
+                            
+                            <h3><span>Title:</span>{title}</h3>
+                            <h3><span>Username:</span>{username}</h3>
+                            <h3><span>Rating:</span>{rating}</h3>
+                            <h3><span>URL:</span><a target="_blank" href={url}>{url}</a></h3>
+                            <h3><span>Date/Time of Trending</span>{trending_datetime}</h3>
+                            <h3><span>Source:</span>{source}</h3>
+                            
                                 <button onClick={this.closeModal}>Close Modal</button>
-                            </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>

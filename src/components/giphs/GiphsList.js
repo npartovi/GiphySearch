@@ -74,7 +74,7 @@ class GiphsList extends Component {
         const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
         const windowBottom = windowHeight + window.pageYOffset;
         
-        if (windowBottom >= docHeight - 2) {
+        if (windowBottom >= docHeight - 100) {
             this.renderGiphs(this.state.searchTerm)
         }
     }
@@ -89,7 +89,6 @@ class GiphsList extends Component {
 
         return(
             <div className="giphs-list-container">
-                <h1>Trending List</h1>
                 <div className="giphs-list-wrapper">
                     {GiphsList}
                 </div>
