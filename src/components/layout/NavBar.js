@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import SearchBar from '../search/SearchBar';
 import { connect } from 'react-redux';
-import { renderTrendingGifs } from '../../actions/giphyAPI'
+import { renderTrendingGifs, renderFavoriteGifs } from '../../actions/giphyAPI'
 
 
 class NavBar extends Component {
@@ -10,6 +10,9 @@ class NavBar extends Component {
         this.props.renderTrendingGifs()
     }
 
+    renderFavorites = () => {
+        this.props.renderFavoriteGifs()
+    }
 
     render(){
         return(
@@ -20,6 +23,7 @@ class NavBar extends Component {
                     </div>
                     <div className="links-bar-container">
                         <button onClick={this.renderTrending}>Trending</button>
+                        <button onClick={this.renderFavorites}>Favorites</button>
                     </div>
                 </div>
             </nav>
@@ -31,4 +35,4 @@ const mapStateToProps = (state) => ({
     actions: state.actions
 })
 
-export default connect(mapStateToProps, {renderTrendingGifs})(NavBar)
+export default connect(mapStateToProps, {renderTrendingGifs, renderFavoriteGifs})(NavBar)

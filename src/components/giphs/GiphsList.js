@@ -39,7 +39,7 @@ class GiphsList extends Component {
         window.addEventListener('scroll', this.trackScrolling)
     }
 
-    componentWillReceiveProps(nextProps, nextState){
+    componentWillReceiveProps(nextProps){
         if(nextProps.actions.renderSearch !== this.state.searchTerm){
             this.setState({searchTerm: nextProps.actions.renderSearch, offset: 0, giphs: []}, () => {
                 this.renderGiphs()
@@ -96,8 +96,7 @@ class GiphsList extends Component {
     render(){
 
         const { giphs, favorites } = this.state
-        console.log(favorites)
-
+        
         const GiphsList = giphs.map((gif,idx) => (
             <GiphsListItem updateFavorites={this.updateFavoritesList} key={idx} gif={gif} />  
         ))
