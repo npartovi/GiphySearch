@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Moment from 'react-moment'
 
 class GiphsListItem extends Component {
     constructor(props){
@@ -37,15 +38,17 @@ class GiphsListItem extends Component {
                             <img src={originalImage} />
                         </div>
                         <div className="right-modal-container">
-                            
-                            <h3><span>Title:</span>{title}</h3>
-                            <h3><span>Username:</span>{username}</h3>
-                            <h3><span>Rating:</span>{rating}</h3>
-                            <h3><span>URL:</span><a target="_blank" href={url}>{url}</a></h3>
-                            <h3><span>Date/Time of Trending</span>{trending_datetime}</h3>
-                            <h3><span>Source:</span>{source}</h3>
-                            
-                                <button onClick={this.closeModal}>Close Modal</button>
+                            <div className="list-wrap">
+                                <ul className="list">
+                                    <li><span>Title:</span> {title}</li>
+                                    <li><span>Username:</span> {username}</li>
+                                    <li><span>Rating:</span> {rating}</li>
+                                    <li><span>URL: </span><a target="_blank" href={url}>{url}</a></li>
+                                    <li><span>Date/Time of Trending: </span> <Moment>{trending_datetime}</Moment></li>
+                                    <li><span>Source:</span><a target="_blank" href={source}>{source}</a></li>
+                                </ul>
+                            </div>
+                            <button className="close-modal-button" onClick={this.closeModal}>Close Modal</button>
                         </div>
                     </div>
                 </div>

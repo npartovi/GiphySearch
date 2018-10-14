@@ -10,6 +10,7 @@ class NavBar extends Component {
         this.props.renderTrendingGifs()
     }
 
+
     render(){
         return(
             <nav className="navbar-container">

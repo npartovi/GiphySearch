@@ -1,6 +1,6 @@
 import axios from 'axios'
 import keys from '../config'
-import { GET_ALL_TRENDING_GIPHS, UPDATE_SEARCH_TERM, RENDER_TRENDING_GIPHS } from './types'
+import { GET_ALL_TRENDING_GIPHS, UPDATE_SEARCH_TERM, RENDER_TRENDING_GIPHS, RENDER_RANDOM_GIPHS } from './types'
 
 export const giphyTrending = (offset) => dispatch => {
 
@@ -49,7 +49,7 @@ export const updateSearchTerm = (term) => dispatch => {
     })
 }
 
-export const renderTrendingGifs = (boolean) => dispatch => {
+export const renderTrendingGifs = () => dispatch => {
     dispatch({
         type: RENDER_TRENDING_GIPHS
     })

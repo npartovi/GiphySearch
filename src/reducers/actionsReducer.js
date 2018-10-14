@@ -2,7 +2,7 @@ import { UPDATE_SEARCH_TERM, RENDER_TRENDING_GIPHS } from '../actions/types'
 
 const initialState = {
     renderSearch: "",
-    renderTrending: true
+    renderRandom: false
 }
 
 const actionsReducer = (state = initialState, action) => {
@@ -15,7 +15,8 @@ const actionsReducer = (state = initialState, action) => {
         case RENDER_TRENDING_GIPHS:
             return {
                 ...state,
-                renderSearch: ""
+                renderSearch: "",
+                renderRandom: false
             }
         default:
             return state
