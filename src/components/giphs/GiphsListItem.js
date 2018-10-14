@@ -33,17 +33,19 @@ class GiphsListItem extends Component {
                 <img onClick={this.openModal} alt="oops" src={originalImage} />
                 <div className="modal" style={modal ? {display: "block"} : {display: "none"}}>
                     <div className="modal-content">
-                        <div className="left-modal-content">
+                        <div className="left-modal-container">
                             <img src={originalImage} />
                         </div>
-                        <div className="right-modal-content">
-                            <p>{title}</p>
-                            <p>{username}</p>
-                            <p>{rating}</p>
-                            <p>{url}</p>
-                            <p>{trending_datetime}</p>
-                            <p>{source}</p>
-                            <button onClick={this.closeModal}>Close Modal</button>
+                        <div className="right-modal-container">
+                            <div className="right-modal-content">
+                                <h3>{title}</h3>
+                                <h3>{username}</h3>
+                                <h3>{rating}</h3>
+                                <h3>{url}</h3>
+                                <h3>{trending_datetime}</h3>
+                                <h3>{source}</h3>
+                                <button onClick={this.closeModal}>Close Modal</button>
+                            </div>
                         </div>
                         
                     </div>
