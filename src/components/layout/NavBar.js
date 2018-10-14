@@ -19,7 +19,6 @@ class NavBar extends Component {
                     </div>
                     <div className="links-bar-container">
                         <button onClick={this.renderTrending}>Trending</button>
-                        <i className="fa fa-search fa-lg"></i><span class="verticleLine"></span>
                     </div>
                 </div>
             </nav>
