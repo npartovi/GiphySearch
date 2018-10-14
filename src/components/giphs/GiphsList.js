@@ -14,7 +14,8 @@ class GiphsList extends Component {
             giphs: this.props.giphs,
             searchTerm: "",
             offset: 0,
-            favorites: []
+            favorites: [],
+            renderFavorites: false
         }
     }
 
@@ -40,8 +41,12 @@ class GiphsList extends Component {
     }
 
     componentWillReceiveProps(nextProps){
+        if(nextProps.actions.renderFavorites){
+            this.setState({renderFavorites: true})
+        }
+
         if(nextProps.actions.renderSearch !== this.state.searchTerm){
-            this.setState({searchTerm: nextProps.actions.renderSearch, offset: 0, giphs: []}, () => {
+            this.setState({searchTerm: nextProps.actions.renderSearch, offset: 0, giphs: [], renderFavorites: false}, () => {
                 this.renderGiphs()
             })
         }
@@ -63,7 +68,7 @@ class GiphsList extends Component {
         axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=${keys.giphyAPIKey}&limit=${this.state.limit}&offset=${this.state.offset}`)
             .then(res => {
                 let newState = res.data.data
-                this.setState({giphs: this.state.giphs.concat(newState), offset: 25 + this.state.offset})
+                this.setState({giphs: this.state.giphs.concat(newState), offset: 25 + this.state.offset, renderFavorites: false})
             })
             .catch(err => {
                 console.error(err)
@@ -74,7 +79,7 @@ class GiphsList extends Component {
         axios.get(`http://api.giphy.com/v1/gifs/search?api_key=${keys.giphyAPIKey}&q=${this.state.searchTerm}&limit=25&offset=${this.state.offset}`)
         .then(res => {
             let newState = res.data.data
-            this.setState({giphs: this.state.giphs.concat(newState), offset: 25 + this.state.offset})
+            this.setState({giphs: this.state.giphs.concat(newState), offset: 25 + this.state.offset, renderFavorites: false})
         })
         .catch(err => {
             console.error(err)
@@ -95,11 +100,22 @@ class GiphsList extends Component {
 
     render(){
 
-        const { giphs, favorites } = this.state
+        const { giphs, favorites, renderFavorites } = this.state
+        let GiphsList
+
+        if(renderFavorites){
+            console.log("favorites render!!!")
+            console.log(favorites)
+            GiphsList = favorites.map((gif,idx) => (
+                <GiphsListItem updateFavorites={this.updateFavoritesList} key={idx} gif={gif} />  
+            ))
+        }else{
+            GiphsList = giphs.map((gif,idx) => (
+                <GiphsListItem updateFavorites={this.updateFavoritesList} key={idx} gif={gif} />  
+            ))
+        }
         
-        const GiphsList = giphs.map((gif,idx) => (
-            <GiphsListItem updateFavorites={this.updateFavoritesList} key={idx} gif={gif} />  
-        ))
+        
 
         return(
             <div className="giphs-list-container">
