@@ -53,7 +53,7 @@ class GiphsListItem extends Component {
                                 </ul>
                             </div>
                             <button className="close-modal-button" onClick={this.closeModal}>Close Modal</button>
-                            <button className="favorite-button" onClick={() => this.favoriteAdded(gif)}>Favorite</button>
+                            <button className="favorite-button" onClick={() => this.favoriteAdded(gif)}>{this.props.text}</button>
                         </div>
                     </div>
                 </div>
