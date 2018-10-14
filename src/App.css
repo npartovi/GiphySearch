@@ -54,7 +54,7 @@ button{
   height: 100%;
   width: 300px;
   position: fixed;
-  background: rgb(0, 170, 231);
+  background: linear-gradient(135deg, #2a99ef 20%, #52d9e5 80%);
 }
 
 .layout-container {
@@ -70,9 +70,7 @@ button{
 }
 
 .giphs-list-wrapper {
-    /* Prevent vertical gaps */
     line-height: 0;
-   
     -webkit-column-count: 4;
     -webkit-column-gap:   0px;
     -moz-column-count:    4;
@@ -248,8 +246,14 @@ i.fas.fa-search {
   margin-top: 80px;
 }
 
-.navButton {
-  
+.links-bar-container h1 {
+  font-size: 30px;
+  margin-bottom: 53px;
+  color:white;
+  cursor: pointer;
 }
+
+
+
 
 

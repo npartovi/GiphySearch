@@ -15,6 +15,7 @@ class NavBar extends Component {
     }
 
     render(){
+
         return(
             <nav className="navbar-container">
                 <div className="navbar-wrapper">
@@ -22,8 +23,8 @@ class NavBar extends Component {
                         <SearchBar />
                     </div>
                     <div className="links-bar-container">
-                        <button className="trending navButton" onClick={this.renderTrending}>Trending</button>
-                        <button className="favorite navButton" onClick={this.renderFavorites}>Favorites</button>
+                        <button onClick={this.renderTrending} class="btn">Trending</button>
+                        <button onClick={this.renderFavorites} class="btn">Favorites</button>
                     </div>
                 </div>
             </nav>
