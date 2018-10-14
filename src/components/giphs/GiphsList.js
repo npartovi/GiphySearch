@@ -19,7 +19,6 @@ class GiphsList extends Component {
         }
     }
 
-
     updateFavoritesList = (gif) => {
         let newState = [...this.state.favorites]
         newState.push(gif)
@@ -32,21 +31,21 @@ class GiphsList extends Component {
     }
 
     componentDidMount(){
-
         if(localStorage.favorites){
             this.setState({favorites: JSON.parse(localStorage.favorites)})
         }
-
         window.addEventListener('scroll', this.trackScrolling)
     }
 
     componentWillReceiveProps(nextProps){
         if(nextProps.actions.renderFavorites){
             this.setState({renderFavorites: true})
+        }else{
+            this.setState({renderFavorites: false})
         }
 
         if(nextProps.actions.renderSearch !== this.state.searchTerm){
-            this.setState({searchTerm: nextProps.actions.renderSearch, offset: 0, giphs: [], renderFavorites: false}, () => {
+            this.setState({searchTerm: nextProps.actions.renderSearch, offset: 0, giphs: []}, () => {
                 this.renderGiphs()
             })
         }
@@ -68,7 +67,7 @@ class GiphsList extends Component {
         axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=${keys.giphyAPIKey}&limit=${this.state.limit}&offset=${this.state.offset}`)
             .then(res => {
                 let newState = res.data.data
-                this.setState({giphs: this.state.giphs.concat(newState), offset: 25 + this.state.offset, renderFavorites: false})
+                this.setState({giphs: this.state.giphs.concat(newState), offset: 25 + this.state.offset})
             })
             .catch(err => {
                 console.error(err)
@@ -79,7 +78,7 @@ class GiphsList extends Component {
         axios.get(`http://api.giphy.com/v1/gifs/search?api_key=${keys.giphyAPIKey}&q=${this.state.searchTerm}&limit=25&offset=${this.state.offset}`)
         .then(res => {
             let newState = res.data.data
-            this.setState({giphs: this.state.giphs.concat(newState), offset: 25 + this.state.offset, renderFavorites: false})
+            this.setState({giphs: this.state.giphs.concat(newState), offset: 25 + this.state.offset})
         })
         .catch(err => {
             console.error(err)
@@ -104,8 +103,6 @@ class GiphsList extends Component {
         let GiphsList
 
         if(renderFavorites){
-            console.log("favorites render!!!")
-            console.log(favorites)
             GiphsList = favorites.map((gif,idx) => (
                 <GiphsListItem updateFavorites={this.updateFavoritesList} key={idx} gif={gif} />  
             ))
