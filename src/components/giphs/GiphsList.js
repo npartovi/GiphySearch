@@ -22,15 +22,8 @@ class GiphsList extends Component {
     updateFavoritesList = (gif) => {
         let newState = [...this.state.favorites]
         newState.push(gif)
-        this.setState({favorites: newState}, () => {
-            console.log(this.state.favorites)
-        })
-        // this.setState({favorites: newState})
-        // localStorage.setItem("favorites", JSON.stringify(this.state.favorites))
-    }
-
-    componentDidMount(){
-      
+        this.setState({favorites: newState})
+        localStorage.setItem("list", JSON.stringify(this.state.favorites))
     }
 
     componentWillUnmount(){
@@ -87,6 +80,7 @@ class GiphsList extends Component {
         const windowBottom = windowHeight + window.pageYOffset;
         
         if (windowBottom >= docHeight - 100) {
+            console.log("load more")
             this.renderGiphs(this.state.searchTerm)
         }
     }
