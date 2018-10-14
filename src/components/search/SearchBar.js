@@ -22,13 +22,9 @@ class SearchBar extends Component {
 
     render(){
         return(
-            <div className="search-bar-container">
-                <form onSubmit={this.onSubmit}>
-                    <label>Search</label>
-                    <input onChange={this.onChange} type="search" />
-                    <button type="submit">Submit</button>
-                </form>
-                
+            <div className="search-bar-wrapper">
+                    <input id="searchText" onChange={this.onChange} type="search" />
+                    <i class="fa fa-search fa-lg"></i><span class="verticleLine"></span>
             </div>
             
         )

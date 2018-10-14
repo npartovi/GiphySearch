@@ -14,7 +14,6 @@ class GiphsList extends Component {
             giphs: this.props.giphs,
             searchTerm: "",
             offset: 0,
-            trending: true
         }
     }
 
@@ -27,10 +26,8 @@ class GiphsList extends Component {
     }
 
     componentWillReceiveProps(nextProps, nextState){
-        console.log("nextProps", nextProps)
-        console.log("nextState", nextState)
-        if(nextProps.searchTerm !== this.state.searchTerm){
-            this.setState({searchTerm: nextProps.searchTerm, offset: 0, giphs: [], trending: false}, () => {
+        if(nextProps.actions.renderSearch !== this.state.searchTerm){
+            this.setState({searchTerm: nextProps.actions.renderSearch, offset: 0, giphs: []}, () => {
                 this.renderGiphs()
             })
         }
@@ -103,7 +100,7 @@ class GiphsList extends Component {
 
 const mapStateToProps = (state) => ({
     giphs: state.giphs,
-    searchTerm: state.searchTerm
+    actions: state.actions
 })
 
 export default connect(mapStateToProps, {giphyTrending})(GiphsList)

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 import giphsReducer from './giphsReducer'
-import searchReducer from './searchReducer'
+import actionsReducer from './actionsReducer'
 
 
 export default combineReducers({
     giphs: giphsReducer,
-    searchTerm: searchReducer
+    actions: actionsReducer
 })
