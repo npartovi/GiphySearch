@@ -52,8 +52,8 @@ class GiphsListItem extends Component {
                                     <li><span>Source: </span><a rel="noopener noreferrer" target="_blank" href={source}>{source}</a></li>
                                 </ul>
                             </div>
-                            <button className="close-modal-button" onClick={this.closeModal}>Close Modal</button>
-                            <button className="favorite-button" onClick={() => this.favoriteAdded(gif)}>{this.props.text}</button>
+                            <button className="close-modal-button" onClick={this.closeModal}><i className="fa fa-times-circle" aria-hidden="true"></i></button>
+                            <button className="favorite-button" onClick={() => this.favoriteAdded(gif)}>{this.props.text}<i class="fa fa-heart" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>

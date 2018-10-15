@@ -116,7 +116,7 @@ class GiphsList extends Component {
             ))
         }else{
             GiphsList = giphs.map((gif,idx) => (
-                <GiphsListItem text={"Favorite"} updateFavorites={this.updateFavoritesList} key={idx} gif={gif} />  
+                <GiphsListItem text={"Add To Favorites"} updateFavorites={this.updateFavoritesList} key={idx} gif={gif} />  
             ))
         }
         

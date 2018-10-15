@@ -6,11 +6,13 @@ import { renderTrendingGifs, renderFavoriteGifs } from '../../actions/giphyAPI'
 
 class NavBar extends Component {
 
-    renderTrending = () => {
+    renderTrending = (e) => {
+        e.preventDefault()
         this.props.renderTrendingGifs()
     }
 
-    renderFavorites = () => {
+    renderFavorites = (e) => {
+        e.preventDefault()
         this.props.renderFavoriteGifs()
     }
 
@@ -23,8 +25,8 @@ class NavBar extends Component {
                         <SearchBar />
                     </div>
                     <div className="links-bar-container">
-                        <a href="/" onClick={this.renderTrending} className="btn"><span>Trending<i class="fa fa-globe fa-lg" aria-hidden="true"></i></span></a>
-                        <a href="/" onClick={this.renderFavorites} className="btn"><span>Favorites<i class="fa fa-heart fa-lg" aria-hidden="true"></i></span></a>
+                        <a href="/" onClick={this.renderTrending} className="btn"><span>Trending<i className="fa fa-globe fa-lg" aria-hidden="true"></i></span></a>
+                        <a href="/" onClick={this.renderFavorites} className="btn"><span>Favorites<i className="fa fa-heart fa-lg" aria-hidden="true"></i></span></a>
                     </div>
                 </div>
             </nav>
