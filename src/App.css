@@ -179,9 +179,14 @@ button.favorite-button {
   font-size: 17px;
   padding: 9px;
   border-radius: 3px;
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
   color: black;
   border: 1px solid black;
+}
+
+button.favorite-button:hover {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 }
 
 .favorite-button i.fa.fa-heart {
@@ -197,6 +202,10 @@ button.close-modal-button {
   color: white;
   font-weight: bold;
   border: 1px solid black;
+}
+
+button.close-modal-button:hover {
+  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
 }
 
 .list{
