@@ -11,7 +11,7 @@ class GiphsList extends Component {
         super(props)
 
         this.state = {
-            giphs: this.props.giphs,
+            giphs: [],
             searchTerm: "",
             offset: 0,
             favorites: [],
@@ -133,8 +133,7 @@ class GiphsList extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    giphs: state.giphs,
     actions: state.actions
 })
 
-export default connect(mapStateToProps, {giphyTrending})(GiphsList)
+export default connect(mapStateToProps,null)(GiphsList)
