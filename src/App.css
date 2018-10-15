@@ -317,6 +317,7 @@ ul.list h1 {
 .list li {
   font-size: 0.9em;
   margin: 16px 0px;
+  text-align: center;
 }
 
 .left-modal-container {
