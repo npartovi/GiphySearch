@@ -11,10 +11,12 @@ class SearchBar extends Component {
         }
     }
 
+    // Sets the term to the state of the SearchBar component
     onChange = (e) => {
         this.setState({term: e.target.value})
     }
 
+    // Sends the term to the dispatch action so that it can be set in the redux store
     onSubmit = (e) => {
         e.preventDefault()
         this.props.updateSearchTerm(this.state.term)

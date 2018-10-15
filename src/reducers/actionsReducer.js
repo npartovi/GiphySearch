@@ -5,6 +5,8 @@ const initialState = {
     renderFavorites: false
 }
 
+// Added a actionsReducer that chooses which gifs to load on the page
+
 const actionsReducer = (state = initialState, action) => {
     switch(action.type){
         case UPDATE_SEARCH_TERM:

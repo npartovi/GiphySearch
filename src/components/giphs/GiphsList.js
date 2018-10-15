@@ -19,6 +19,8 @@ class GiphsList extends Component {
         }
     }
 
+
+    // Adds favorite to the browser local storage
     updateFavoritesList = (gif) => {
         let newState = [...this.state.favorites]
         newState.push(gif)
@@ -26,6 +28,7 @@ class GiphsList extends Component {
         localStorage.setItem("favorites", JSON.stringify(newState))
     }
 
+    // Removes favorite from the local storage
     removeFavoritesList = (gif) => {
         let newState = [...this.state.favorites]
         newState = newState.filter(favorite => favorite !== gif )
@@ -34,10 +37,7 @@ class GiphsList extends Component {
         localStorage.setItem("favorites", JSON.stringify(newState))
     }
 
-    componentWillUnmount(){
-        window.removeEventListener('scroll', this.trackScrolling)
-    }
-
+    // Sets the State of the favorites array from local storage and adds a eventListener for scroll events
     componentDidMount(){
         if(localStorage.favorites){
             this.setState({favorites: JSON.parse(localStorage.favorites)})
@@ -45,6 +45,13 @@ class GiphsList extends Component {
         window.addEventListener('scroll', this.trackScrolling)
     }
 
+    // Removes the eventListener once the component unmounts to prevent side effects 
+    componentWillUnmount(){
+        window.removeEventListener('scroll', this.trackScrolling)
+    }
+
+
+    // Listens to the Redux Store to determine what gifs to render
     componentWillReceiveProps(nextProps){
         if(nextProps.actions.renderFavorites){
             this.setState({renderFavorites: true})
@@ -59,10 +66,12 @@ class GiphsList extends Component {
         }
     }
 
+    // Initial Loading of the trending gifs before component mounts
     componentWillMount(){
         this.renderGiphs(this.state.term)
     }
 
+    // Determines to render Trending giphs or Searched gifs(also includes the random word gifs)
     renderGiphs = () => {
         if(this.state.searchTerm === ""){
             this.renderTrendingGiphs()
@@ -70,6 +79,10 @@ class GiphsList extends Component {
             this.renderSearchTermGiphs()
         }
     }
+
+
+    // API call to the Giphy endpoint to retrieve the first 25 trending gifs. Also sets the offset in the component state so that
+    //user scrolls down the page, it will pull in the next 25 gifs
 
     renderTrendingGiphs = () => {
         axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=${keys.giphyAPIKey}&limit=${this.state.limit}&offset=${this.state.offset}`)
@@ -82,6 +95,8 @@ class GiphsList extends Component {
             })
     }
 
+    // API call to the Giphy endpoint to retrieve the first 25 gifs based on the search term. Also sets the offset in the component state so that
+    // user scrolls down the page, it will pull in the next 25 gifs
     renderSearchTermGiphs = () => {
         axios.get(`http://api.giphy.com/v1/gifs/search?api_key=${keys.giphyAPIKey}&q=${this.state.searchTerm}&limit=25&offset=${this.state.offset}`)
         .then(res => {
@@ -93,6 +108,8 @@ class GiphsList extends Component {
         })
     }
 
+    // Used as a callback for the scroll eventListener. Determines where on the page the user is and once the user is
+    // further down the page, it will make another API call to get the next 25 gifs.
     trackScrolling = () => {
         const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
         const body = document.body;
@@ -120,8 +137,6 @@ class GiphsList extends Component {
             ))
         }
         
-        
-
         return(
             <div className="giphs-list-container">
                 <div className="giphs-list-wrapper">

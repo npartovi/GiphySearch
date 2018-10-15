@@ -7,16 +7,19 @@ import { renderTrendingGifs, renderFavoriteGifs, updateSearchTerm } from '../../
 
 class NavBar extends Component {
 
+    // Sets off action to the redux store to render Trending gifs
     renderTrending = (e) => {
         e.preventDefault()
         this.props.renderTrendingGifs()
     }
 
+    // Sets off action to the redux store to render Favorite gifs
     renderFavorites = (e) => {
         e.preventDefault()
         this.props.renderFavoriteGifs()
     }
 
+    // Sets off action to the redux store to render Random Gifs
     renderRandom = (e) => {
         e.preventDefault()
         let randomWord = randomWords()
@@ -24,7 +27,6 @@ class NavBar extends Component {
     }
 
     render(){
-
         return(
             <nav className="navbar-container">
                 <div className="navbar-wrapper">

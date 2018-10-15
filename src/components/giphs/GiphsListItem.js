@@ -10,10 +10,14 @@ class GiphsListItem extends Component {
         }
     }
 
+    // Opens modal by changing component state
     openModal = () => this.setState({modal: true})
 
+    // Closes modal by changing component state
     closeModal = () => this.setState({modal: false})
 
+    // When user clicks on the add to favorite button, it will send this to the function in the GiphsList to be added
+    // to local storage. It will then close the modal
     favoriteAdded = (gif) => {
         this.props.updateFavorites(gif)
         this.closeModal()
@@ -21,8 +25,8 @@ class GiphsListItem extends Component {
 
     
     render(){
-
         
+        // Creating variable to be displayed in the modal
         const {gif} = this.props
         const { modal } = this.state
         const source = gif.source || "no source available"
