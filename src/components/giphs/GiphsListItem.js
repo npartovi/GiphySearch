@@ -53,7 +53,7 @@ class GiphsListItem extends Component {
                                 </ul>
                             </div>
                             <button className="close-modal-button" onClick={this.closeModal}><i className="fa fa-times-circle" aria-hidden="true"></i></button>
-                            <button className="favorite-button" onClick={() => this.favoriteAdded(gif)}>{this.props.text}<i class="fa fa-heart" aria-hidden="true"></i></button>
+                            <button className="favorite-button" onClick={() => this.favoriteAdded(gif)}>{this.props.text}<i className="fa fa-heart" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
