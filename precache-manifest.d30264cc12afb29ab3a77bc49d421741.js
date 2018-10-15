@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/eaze_challenge/static/js/runtime~main.cd7d23cd.js"
   },
   {
-    "revision": "4846b5810ceea5f3cb7d",
-    "url": "/eaze_challenge/static/js/main.4846b581.chunk.js"
+    "revision": "cb3ecc68a874456d8448",
+    "url": "/eaze_challenge/static/js/main.cb3ecc68.chunk.js"
   },
   {
     "revision": "c72577bc4e276e429deb",
     "url": "/eaze_challenge/static/js/1.c72577bc.chunk.js"
   },
   {
-    "revision": "4846b5810ceea5f3cb7d",
+    "revision": "cb3ecc68a874456d8448",
     "url": "/eaze_challenge/static/css/main.3ca9284b.chunk.css"
   },
   {
-    "revision": "b80d65b45d63fb603e765acda0a4b6a5",
+    "revision": "3727591d03abf9798849043afeefd4bc",
     "url": "/eaze_challenge/index.html"
   }
 ];

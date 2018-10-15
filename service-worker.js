@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/eaze_challenge/precache-manifest.f6a2b26bd8ba071e1f10112afbaf30eb.js"
+  "/eaze_challenge/precache-manifest.d30264cc12afb29ab3a77bc49d421741.js"
 );
 
 workbox.clientsClaim();
