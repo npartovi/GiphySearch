@@ -52,7 +52,7 @@ class GiphsListItem extends Component {
                                     <li><span>Username:</span> {username}</li>
                                     <li><span>Rating:</span> {rating}</li>
                                     <li><span>URL: </span><a rel="noopener noreferrer" target="_blank" href={url}>{url}</a></li>
-                                    <li><span>Date/Time of Trending: </span> <Moment>{trending_datetime}</Moment></li>
+                                    <li><span>Time of Trending:</span> <Moment format="MMM D YYYY HH:mm">{trending_datetime}</Moment></li>
                                     <li><span>Source: </span><a rel="noopener noreferrer" target="_blank" href={source}>{source}</a></li>
                                 </ul>
                             </div>

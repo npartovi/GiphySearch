@@ -201,6 +201,7 @@ button.close-modal-button {
 
 .list{
   text-align: left;
+  text-transform: capitalize;
 }
 
 ul.list span {
@@ -253,6 +254,7 @@ i.fas.fa-search {
   right: 34px;
   top: 62px;
 }
+
 
 .links-bar-container {
   display: flex;
@@ -310,7 +312,6 @@ i.fas.fa-search {
 .btn .fa {
   margin-left: 10px;
 }
-
 
 
 .title {
