@@ -6,7 +6,7 @@ import { renderTrendingGifs, renderFavoriteGifs, updateSearchTerm } from '../../
 
 
 class NavBar extends Component {
-
+   
     // Sets off action to the redux store to render Trending gifs
     renderTrending = (e) => {
         e.preventDefault()

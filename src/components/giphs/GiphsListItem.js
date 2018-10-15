@@ -42,21 +42,25 @@ class GiphsListItem extends Component {
                 <img onClick={this.openModal} alt="oops" src={originalImage} />
                 <div className="modal" style={modal ? {display: "block"} : {display: "none"}}>
                     <div className="modal-content">
-                        <div className="left-modal-container">
-                            <img src={originalImage} alt="" />
-                        </div>
-                        <div className="right-modal-container">
-                            <div className="list-wrap">
-                                <ul className="list">
-                                    <li><span>Title:</span> {title}</li>
-                                    <li><span>Username:</span> {username}</li>
-                                    <li><span>Rating:</span> {rating}</li>
-                                    <li><span>URL: </span><a rel="noopener noreferrer" target="_blank" href={url}>{url}</a></li>
-                                    <li><span>Time of Trending:</span> <Moment format="MMM D YYYY HH:mm">{trending_datetime}</Moment></li>
-                                    <li><span>Source: </span><a rel="noopener noreferrer" target="_blank" href={source}>{source}</a></li>
-                                </ul>
+                        <div className="content-container">
+                            <div className="left-modal-container">
+                                <img src={originalImage} alt="" />
+                            </div>
+                            <div className="right-modal-container">
+                                <div className="list-wrap">
+                                    <ul className="list">
+                                        <li><h1>{title}</h1></li>
+                                        <li><span>Submitted by:</span> {username}</li>
+                                        <li><span>Rating:</span> {rating}</li>
+                                        <li><span id="url-link">URL: </span><a rel="noopener noreferrer" target="_blank" href={url}>Visit on Giphy</a></li>
+                                        <li><span id="source-link">Source: </span><a rel="noopener noreferrer" target="_blank" href={source}>Source</a></li>
+                                        <li><span>Time of Trending:</span> <Moment format="MMM D YYYY HH:mm">{trending_datetime}</Moment></li>
+                                    </ul>
+                                </div>
                             </div>
                             <button className="close-modal-button" onClick={this.closeModal}><i className="fa fa-times-circle" aria-hidden="true"></i></button>
+                        </div>
+                        <div className="buttons-container">
                             <button className="favorite-button" onClick={() => this.favoriteAdded(gif)}>{this.props.text}<i className="fa fa-heart" aria-hidden="true"></i></button>
                         </div>
                     </div>
