@@ -1,3 +1,5 @@
+
+/* Reset all native html elements */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -49,6 +51,12 @@ button{
   cursor: pointer
 }
 
+.layout-container {
+  margin: 0 auto;
+}
+
+
+/* CSS for navbar */
 
 .navbar-container {
   height: 100%;
@@ -61,13 +69,8 @@ i.fas.fa-random.fa-lg {
   margin-left: 23px;
 }
 
-.layout-container {
-  margin: 0 auto;
-}
 
-
-
-
+/* CSS for Giph grid layout */
 
 .giphs-list-container {
   margin-left: 300px;
@@ -88,7 +91,6 @@ i.fas.fa-random.fa-lg {
 }
 
 .giphs-list-item > img {
-   /* Just in case there are inline attributes */
    width: 100% !important; 
    height: auto !important; 
 }
@@ -123,6 +125,8 @@ i.fas.fa-random.fa-lg {
   }
 }
 
+
+/* CSS for modal */
 .modal {
   position: fixed; 
   z-index: 1; 
@@ -225,16 +229,7 @@ ul.list span {
 
 
 
-
-
-
-
-
-
-
-
-
-
+/* CSS for searchbar */
 #searchText {
   border-radius: 10px;
   height: 38px;
