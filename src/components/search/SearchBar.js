@@ -25,7 +25,6 @@ class SearchBar extends Component {
             <div className="search-bar-wrapper">
                 <form onSubmit={this.onSubmit}>
                     <input id="searchText" onChange={this.onChange} type="search" placeholder="Search for a Giphy..." />
-                    <i className="fas fa-search fa-lg"></i>
                 </form>
             </div>
             

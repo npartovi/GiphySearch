@@ -21,6 +21,10 @@ class NavBar extends Component {
         return(
             <nav className="navbar-container">
                 <div className="navbar-wrapper">
+                    <div class="title">
+                        <div class="title-word">Giphy</div>
+                        <div class="title-word">Search</div>
+                    </div>
                     <div className="search-bar-container">
                         <SearchBar />
                     </div>
