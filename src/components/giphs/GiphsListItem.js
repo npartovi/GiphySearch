@@ -68,13 +68,17 @@ class GiphsListItem extends Component {
                     </li>
                     <li>
                       <span id="source-link">Original Location: </span>
-                      <a
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        href={source}
-                      >
-                        Source Link
-                      </a>
+                      {source === "no source available" ? (
+                        "No Source Available"
+                      ) : (
+                        <a
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          href={source}
+                        >
+                          Source
+                        </a>
+                      )}
                     </li>
                     <li>
                       <span>Time of Trending:</span>{" "}
