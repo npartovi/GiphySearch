@@ -1,10 +1,7 @@
 import React, {Component} from 'react'
-import { giphyTrending } from '../../actions/giphyAPI'
 import {connect} from 'react-redux'
 import axios from 'axios'
 import GiphsListItem from './GiphsListItem'
-
-import keys from '../../config'
 
 class GiphsList extends Component {
     constructor(props){
@@ -85,7 +82,7 @@ class GiphsList extends Component {
     //user scrolls down the page, it will pull in the next 25 gifs
 
     renderTrendingGiphs = () => {
-        axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=${keys.giphyAPIKey}&limit=${this.state.limit}&offset=${this.state.offset}`)
+        axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=7BsS1QpFETQKbZQLn7Uu18yMeTr9OGBq&limit=${this.state.limit}&offset=${this.state.offset}`)
             .then(res => {
                 let newState = res.data.data
                 this.setState({giphs: this.state.giphs.concat(newState), offset: 25 + this.state.offset})
@@ -98,7 +95,7 @@ class GiphsList extends Component {
     // API call to the Giphy endpoint to retrieve the first 25 gifs based on the search term. Also sets the offset in the component state so that
     // user scrolls down the page, it will pull in the next 25 gifs
     renderSearchTermGiphs = () => {
-        axios.get(`http://api.giphy.com/v1/gifs/search?api_key=${keys.giphyAPIKey}&q=${this.state.searchTerm}&limit=25&offset=${this.state.offset}`)
+        axios.get(`http://api.giphy.com/v1/gifs/search?api_key=7BsS1QpFETQKbZQLn7Uu18yMeTr9OGBq&q=${this.state.searchTerm}&limit=25&offset=${this.state.offset}`)
         .then(res => {
             let newState = res.data.data
             this.setState({giphs: this.state.giphs.concat(newState), offset: 25 + this.state.offset})

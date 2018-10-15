@@ -26,7 +26,7 @@ class GiphsListItem extends Component {
     
     render(){
         
-        // Creating variable to be displayed in the modal
+        // Creating variables to be displayed in the modal
         const {gif} = this.props
         const { modal } = this.state
         const source = gif.source || "no source available"
