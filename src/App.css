@@ -78,11 +78,11 @@ i.fas.fa-random.fa-lg {
 
 .giphs-list-wrapper {
     line-height: 0;
-    -webkit-column-count: 4;
+    -webkit-column-count: 3;
     -webkit-column-gap:   0px;
-    -moz-column-count:    4;
+    -moz-column-count:    3;
     -moz-column-gap:      0px;
-    column-count:         4;
+    column-count:         3;
     column-gap:           0px; 
 }
 
@@ -98,9 +98,9 @@ i.fas.fa-random.fa-lg {
 
 @media (max-width: 1200px) {
   .giphs-list-wrapper  {
-  -moz-column-count:    4;
-  -webkit-column-count: 4;
-  column-count:         4;
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
   }
 }
 @media (max-width: 1000px) {
