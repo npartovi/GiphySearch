@@ -258,10 +258,11 @@ ul.list span {
   margin-right: 8px;
 }
 
-i.fas.fa-search {
+span.input-addon {
   position: absolute;
-  right: 34px;
-  top: 62px;
+  right: 32px;
+  top: 155px;
+  cursor:pointer;
 }
 
 
