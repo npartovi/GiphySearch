@@ -105,7 +105,7 @@ class GiphsList extends Component {
   renderSearchTermGiphs = () => {
     axios
       .get(
-        `http://api.giphy.com/v1/gifs/search?api_key=7BsS1QpFETQKbZQLn7Uu18yMeTr9OGBq&q=${
+        `https://api.giphy.com/v1/gifs/search?api_key=7BsS1QpFETQKbZQLn7Uu18yMeTr9OGBq&q=${
           this.state.searchTerm
         }&limit=25&offset=${this.state.offset}`
       )
