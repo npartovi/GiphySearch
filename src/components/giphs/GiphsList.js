@@ -139,6 +139,7 @@ class GiphsList extends Component {
     );
     const windowBottom = windowHeight + window.pageYOffset;
 
+    
     if (windowBottom >= docHeight - 100) {
       this.renderGiphs(this.state.searchTerm);
     }
