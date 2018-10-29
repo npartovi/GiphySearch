@@ -2,7 +2,7 @@
   "name": "eaze_challenge",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://npartovi.github.io/eaze_challenge/",
+  "homepage": "https://npartovi.github.io/GiphySearch/",
   "dependencies": {
     "axios": "^0.18.0",
     "moment": "^2.22.2",
